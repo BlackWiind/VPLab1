@@ -169,5 +169,38 @@ namespace VPLab1
                 DeleteString(RightText);
             }
         }
+
+        private void ToRightButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object item in LeftText.SelectedItems)
+            {
+                RightText.Items.Add(item);
+              //  LeftText.Items.Remove(item);
+            }
+        }
+
+        private void ToLeftButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object item in RightText.SelectedItems)
+            {
+                LeftText.Items.Add(item);
+              //  RightText.Items.Remove(item);
+            }
+        }
+
+        private void AllRightButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (object item in LeftText.Items)
+            {
+                RightText.Items.Add(item);
+            }
+            LeftText.Items.Clear();
+        }
+
+        private void AllLeftButton_Click(object sender, RoutedEventArgs e)
+        {
+            LeftText.Items.Add(RightText.Items);
+            RightText.Items.Clear();
+        }
     }
 }
