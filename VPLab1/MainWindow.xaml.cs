@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,7 @@ namespace VPLab1
         {
             InitializeComponent();
             this.DataContext = new ExitCommandContext();
+            this.DataContext = new ComboItems();
         }
 
         private void CommandBindingNew_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -201,6 +203,19 @@ namespace VPLab1
         {
             LeftText.Items.Add(RightText.Items);
             RightText.Items.Clear();
+        }
+
+        private void SortAlph(ListBox lb, bool b)
+        {
+            if(b == true)
+            {
+                lb.Items.SortDescriptions.Add(new SortDescription("Content", ListSortDirection.Ascending));
+            }
+            else
+            {
+                lb.Items.SortDescriptions.Add(new SortDescription("Content", ListSortDirection.Ascending));
+            }
+           
         }
     }
 }
