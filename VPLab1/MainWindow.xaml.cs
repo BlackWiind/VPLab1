@@ -205,17 +205,18 @@ namespace VPLab1
             RightText.Items.Clear();
         }
 
-        private void SortAlph(ListBox lb, bool b)
+       
+
+        private void RightSort_Click(object sender, RoutedEventArgs e)
         {
-            if(b == true)
-            {
-                lb.Items.SortDescriptions.Add(new SortDescription("Content", ListSortDirection.Ascending));
-            }
-            else
-            {
-                lb.Items.SortDescriptions.Add(new SortDescription("Content", ListSortDirection.Ascending));
-            }
-           
+            string selectedItem = RightCombo.SelectedItem.ToString();
+            SortClass.Sort(RightText, selectedItem);
+        }
+
+        private void LeftSotr_Click(object sender, RoutedEventArgs e)
+        {
+            string selectedItem = LeftCombo.SelectedItem.ToString();
+            SortClass.Sort(LeftText, selectedItem);
         }
     }
 }
