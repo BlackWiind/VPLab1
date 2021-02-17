@@ -43,9 +43,9 @@
         <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="10 30 10 10" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,3,3">
             <Grid>
                 <Label Margin="10 10 10 10">Раздел 1</Label>
-                <ComboBox x:Name="LeftCombo" Text="Сортировать по" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" Margin="10,50,239,438"/>
+                <ComboBox x:Name="LeftCombo" Text="Сортировать по" SelectedIndex="0" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" Margin="10,50,239,438"/>
                 <Label HorizontalAlignment="Right" Margin="10 10 100 10">Раздел 2</Label>
-                <ComboBox x:Name="RightCombo" ItemsSource="{Binding ItemsCollection}" Height="20" Margin="214,50,35,438" Width="120"/>
+                <ComboBox x:Name="RightCombo" SelectedIndex="0" ItemsSource="{Binding ItemsCollection}" Height="20" Margin="214,50,35,438" Width="120"/>
                 <ListBox x:Name="LeftText" Height="150" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
                 <ListBox x:Name="RightText" Height="150" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,88,35,0"/>
                 <Button x:Name="ToRightButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 88 27 0" Click="ToRightButton_Click">&gt;</Button>
