@@ -115,10 +115,7 @@ namespace VPLab1
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            RightText.Items.Clear();
-            LeftText.Items.Clear();
-            BigText.Document.Blocks.Clear();
-            rb1.IsChecked = true;
+            SomeClear.Clear(RightText,LeftText,BigText,rb1);           
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -174,38 +171,23 @@ namespace VPLab1
 
         private void ToRightButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (object item in LeftText.SelectedItems)
-            {
-                RightText.Items.Add(item);
-              //  LeftText.Items.Remove(item);
-            }
+            Move.SomeMove(LeftText, RightText);
         }
 
         private void ToLeftButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (object item in RightText.SelectedItems)
-            {
-                LeftText.Items.Add(item);
-              //  RightText.Items.Remove(item);
-            }
+            Move.SomeMove(RightText, LeftText);
         }
 
         private void AllRightButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (object item in LeftText.Items)
-            {
-                RightText.Items.Add(item);
-            }
-            LeftText.Items.Clear();
+            Move.Allmove(LeftText, RightText);
         }
 
         private void AllLeftButton_Click(object sender, RoutedEventArgs e)
         {
-            LeftText.Items.Add(RightText.Items);
-            RightText.Items.Clear();
+            Move.Allmove(RightText, LeftText);
         }
-
-       
 
         private void RightSort_Click(object sender, RoutedEventArgs e)
         {
@@ -217,6 +199,16 @@ namespace VPLab1
         {
             string selectedItem = LeftCombo.SelectedItem.ToString();
             SortClass.Sort(LeftText, selectedItem);
+        }
+
+        private void ClearLb1_Click(object sender, RoutedEventArgs e)
+        {
+            SomeClear.Clear(LeftText);
+        }
+
+        private void ClearLb2_Click(object sender, RoutedEventArgs e)
+        {
+            SomeClear.Clear(RightText);
         }
     }
 }

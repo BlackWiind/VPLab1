@@ -20,7 +20,7 @@ namespace VPLab1
         public void Execute(object parameter)
         {
             Application.Current.Shutdown();
-        }
+        }        
     }
     public class ExitCommandContext
     {

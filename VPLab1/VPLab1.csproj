@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SomeClear.cs" />
+    <Compile Include="Move.cs" />
     <Compile Include="Sort.cs" />
     <Page Include="AddForm.xaml">
       <SubType>Designer</SubType>

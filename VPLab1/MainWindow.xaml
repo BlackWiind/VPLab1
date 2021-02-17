@@ -26,7 +26,7 @@
         <Menu x:Name="Menu" Grid.Column="0" Grid.Row="0" Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <MenuItem Header="_Файл" FontSize="16">
                 <MenuItem Header="_Открыть" Name="Open" Command="Open" />
-                <MenuItem Header="_Сохранить" Command="Save" Name="Save"/>
+                <MenuItem Header="_Сохранить" Name="Save" Command="Save"/>
                 <MenuItem Header="С_брос" Name="Clear" Click="Clear_Click"/>
                 <MenuItem Header="_Выход" InputGestureText="Ctrl+X" Name="Exit" Click="Exit_Click"/>
             </MenuItem>
@@ -34,30 +34,30 @@
         <RichTextBox x:Name="BigText" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Margin="20 30 20 150"/>
         <GroupBox Header="Выбор слов" Grid.Column="1" Grid.Row="2" Margin="10 10 10 10">
             <Grid>
-                <RadioButton x:Name="rb1" Content="Все" Margin="20 20 0 0" IsChecked="True"/>
-                <RadioButton x:Name="rb2" Content="Содержит цыфры" Margin="20 40 0 0" IsChecked="False"/>
-                <RadioButton x:Name="rb3" Content="Содержит e-mail" Margin="20 60 0 0" IsChecked="False"/>
-                <Button Content="Начать" Height="60" Width="60" HorizontalAlignment="Right" Margin="10 10 20 10" Click="Button_Click"/>
+                <RadioButton x:Name="rb1" Margin="20 20 0 0" IsChecked="True">Все</RadioButton>
+                <RadioButton x:Name="rb2" Margin="20 40 0 0" IsChecked="False">Содержит цыфры</RadioButton>
+                <RadioButton x:Name="rb3" Margin="20 60 0 0" IsChecked="False"> Содержит e-mail</RadioButton>
+                <Button Height="60" Width="60" HorizontalAlignment="Right" Margin="10 10 20 10" Click="Button_Click">Начать</Button>
             </Grid>
         </GroupBox>
         <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="10 30 10 10" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,3,3">
             <Grid>
-                <Label Content="Раздел 1" Margin="10 10 10 10"/>
-                <ComboBox x:Name="LeftCombo" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" Margin="10,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label Content="Раздел 2" HorizontalAlignment="Right" Margin="10 10 100 10"/>
-                <ComboBox x:Name="RightCombo" ItemsSource="{Binding ItemsCollection}" Height="20" Margin="0,50,37,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="120"/>
+                <Label Margin="10 10 10 10">Раздел 1</Label>
+                <ComboBox x:Name="LeftCombo" Text="Сортировать по" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" Margin="10,50,239,438"/>
+                <Label HorizontalAlignment="Right" Margin="10 10 100 10">Раздел 2</Label>
+                <ComboBox x:Name="RightCombo" ItemsSource="{Binding ItemsCollection}" Height="20" Margin="214,50,35,438" Width="120"/>
                 <ListBox x:Name="LeftText" Height="150" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
                 <ListBox x:Name="RightText" Height="150" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,88,35,0"/>
-                <Button x:Name="ToRightButton" Content="&gt;" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 88 27 0" Click="ToRightButton_Click"/>
-                <Button x:Name="AllRightButton" Content="&gt;&gt;" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 128 27 0" Click="AllRightButton_Click"/>
-                <Button x:Name="ToLeftButton" Content="&lt;" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 168 27 0" Click="ToLeftButton_Click"/>
-                <Button x:Name="AllLeftButton" Content="&lt;&lt;" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 208 27 0" Click="AllLeftButton_Click"/>
-                <Button x:Name="LeftSotr" Content="Сортировать" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 250 0" Click="LeftSotr_Click"/>
-                <Button Content="Очистить" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 250 0"/>
-                <Button x:Name="AddButton" Content="Добавить" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 27 0" Click="AddButton_Click"/>
-                <Button x:Name="DeleteButton" Content="Удалить" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 27 0" Click="DeleteButton_Click"/>
-                <Button x:Name="RightSort" Content="Сортировть" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 258 27 0" Click="RightSort_Click"/>
-                <Button Content="Очитить" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 298 27 0"/>
+                <Button x:Name="ToRightButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 88 27 0" Click="ToRightButton_Click">&gt;</Button>
+                <Button x:Name="AllRightButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 128 27 0" Click="AllRightButton_Click">&gt;&gt;</Button>
+                <Button x:Name="ToLeftButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 168 27 0" Click="ToLeftButton_Click">&lt;</Button>
+                <Button x:Name="AllLeftButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 208 27 0" Click="AllLeftButton_Click">&lt;&lt;</Button>
+                <Button x:Name="LeftSotr" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 250 0" Click="LeftSotr_Click">Сортировать</Button>
+                <Button x:Name="ClearLb1" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 250 0" Click="ClearLb1_Click">Очистить</Button>
+                <Button x:Name="AddButton" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 27 0" Click="AddButton_Click">Добавить</Button>
+                <Button x:Name="DeleteButton" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 27 0" Click="DeleteButton_Click">Удалить</Button>
+                <Button x:Name="RightSort" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 258 27 0" Click="RightSort_Click">Сортировать</Button>
+                <Button x:Name="ClearLb2" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 298 27 0" Click="ClearLb2_Click">Очистить</Button>
             </Grid>
         </Border>
         <GroupBox Header="Поиск" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="12 80 12 12">
