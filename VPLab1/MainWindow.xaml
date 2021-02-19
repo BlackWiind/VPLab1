@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VPLab1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="581.3" Width="725.995">
+        Title="MainWindow" Height="581.3" Width="725.995" ResizeMode="CanMinimize">
     <Window.CommandBindings>
         <CommandBinding Command="Open" CanExecute="OpenCommand_CanExecute" Executed="OpenCommand_Executed"/>
         <CommandBinding Command="Save" CanExecute="SaveCommand_CanExecute" Executed="SaveCommand_Executed"/>
@@ -43,21 +43,21 @@
         <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="10 30 10 10" BorderBrush="Black" BorderThickness="1" CornerRadius="8,8,3,3">
             <Grid>
                 <Label Margin="10 10 10 10">Раздел 1</Label>
-                <ComboBox x:Name="LeftCombo" Text="Сортировать по" SelectedIndex="0" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" Margin="10,50,239,438"/>
+                <ComboBox x:Name="LeftCombo" Text="Сортировать по" SelectedIndex="0" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
                 <Label HorizontalAlignment="Right" Margin="10 10 100 10">Раздел 2</Label>
-                <ComboBox x:Name="RightCombo" SelectedIndex="0" ItemsSource="{Binding ItemsCollection}" Height="20" Margin="214,50,35,438" Width="120"/>
+                <ComboBox x:Name="RightCombo" SelectedIndex="0" ItemsSource="{Binding ItemsCollection}" Height="20" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,36,35,0" />
                 <ListBox x:Name="LeftText" Height="150" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
                 <ListBox x:Name="RightText" Height="150" Width="120" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,88,35,0"/>
-                <Button x:Name="ToRightButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 88 27 0" Click="ToRightButton_Click">&gt;</Button>
-                <Button x:Name="AllRightButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 128 27 0" Click="AllRightButton_Click">&gt;&gt;</Button>
-                <Button x:Name="ToLeftButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 168 27 0" Click="ToLeftButton_Click">&lt;</Button>
-                <Button x:Name="AllLeftButton" Height="20" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 208 27 0" Click="AllLeftButton_Click">&lt;&lt;</Button>
-                <Button x:Name="LeftSotr" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 250 0" Click="LeftSotr_Click">Сортировать</Button>
-                <Button x:Name="ClearLb1" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 250 0" Click="ClearLb1_Click">Очистить</Button>
-                <Button x:Name="AddButton" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 27 0" Click="AddButton_Click">Добавить</Button>
-                <Button x:Name="DeleteButton" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 27 0" Click="DeleteButton_Click">Удалить</Button>
-                <Button x:Name="RightSort" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 258 27 0" Click="RightSort_Click">Сортировать</Button>
-                <Button x:Name="ClearLb2" Height="20" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 298 27 0" Click="ClearLb2_Click">Очистить</Button>
+                <Button x:Name="ToRightButton" Height="30" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 88 27 0" Click="ToRightButton_Click">&gt;</Button>
+                <Button x:Name="AllRightButton" Height="30" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 128 27 0" Click="AllRightButton_Click">&gt;&gt;</Button>
+                <Button x:Name="ToLeftButton" Height="30" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 168 27 0" Click="ToLeftButton_Click">&lt;</Button>
+                <Button x:Name="AllLeftButton" Height="30" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 208 27 0" Click="AllLeftButton_Click">&lt;&lt;</Button>
+                <Button x:Name="LeftSotr" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 250 0" Click="LeftSotr_Click">Сортировать</Button>
+                <Button x:Name="ClearLb1" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 250 0" Click="ClearLb1_Click">Очистить</Button>
+                <Button x:Name="AddButton" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 258 27 0" Click="AddButton_Click">Добавить</Button>
+                <Button x:Name="DeleteButton" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 298 27 0" Click="DeleteButton_Click">Удалить</Button>
+                <Button x:Name="RightSort" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 258 27 0" Click="RightSort_Click">Сортировать</Button>
+                <Button x:Name="ClearLb2" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="223 298 27 0" Click="ClearLb2_Click">Очистить</Button>
             </Grid>
         </Border>
         <GroupBox Header="Поиск" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="12 80 12 12">
@@ -67,7 +67,7 @@
                 <ListBox x:Name="SearchText" Height="100" Width="150" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10 7 10 0"/>
                 <CheckBox x:Name="FindCheck1" Content="Раздел 1" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 0 0 15 "/>
                 <CheckBox x:Name="FindCheck2" Content="Раздел 2" IsChecked="False" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50 25 0 0 "/>
-                <Button x:Name="SearchButton" Content="Поиск" Height="120" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="12" Background="Firebrick" Click="SearchButton_Click"/>
+                <Button x:Name="SearchButton" Height="100" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,38" Click="SearchButton_Click">Поиск</Button>
             </Grid>
         </GroupBox>
 

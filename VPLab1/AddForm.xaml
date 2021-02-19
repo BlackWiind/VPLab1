@@ -5,23 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VPLab1"
         mc:Ignorable="d"
-        Title="AddForm" Height="200" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+        Title="AddForm" Height="230" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.9*"/>
         </Grid.RowDefinitions>
-        <GroupBox Grid.Row="0" Header="Добавить в" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Row="0" Grid.ColumnSpan="2" Header="Добавить в" Margin="5">
             <Grid>
                 <RadioButton x:Name="AddRadio1" Content="Раздел 1" HorizontalAlignment="Left" IsChecked="True"/>
                 <RadioButton x:Name="AddRadio2" Content="Раздел 2" HorizontalAlignment="Left" Margin="0 20 0 0"/>
             </Grid>
         </GroupBox>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Label Content="Введите текст:"/>
-            <TextBox x:Name="TextAdd" HorizontalAlignment="Left" Height="20" Width="280" Margin="5"/>
-            <Button x:Name="AddAddButton" HorizontalAlignment="Left" Height="20" Width="100" Margin=" 5 50 0 0 " Click="AddAddButton_Click">Добавить</Button>
-            <Button x:Name="AddClearButton" Content="Отмена" HorizontalAlignment="Right" Height="20" Width="100" Margin=" 0 50 9 0 " Click="AddClearButton_Click"/>
+            <TextBox x:Name="TextAdd" Height="20" Width="270" VerticalAlignment="Center" Margin="10"/>            
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Button x:Name="AddAddButton" Height="40" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddAddButton_Click">Добавить</Button>            
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Button x:Name="AddClearButton" Height="40" Width="100" Click="AddClearButton_Click">Отмена</Button>
         </Grid>
     </Grid>
 </Window>

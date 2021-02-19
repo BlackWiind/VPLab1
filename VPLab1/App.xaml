@@ -4,6 +4,71 @@
              xmlns:local="clr-namespace:VPLab1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+        <LinearGradientBrush x:Key="GrayBlueGradientBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DarkGray" Offset="0"/>
+            <GradientStop Color="#CCCCFF" Offset="0.5"/>
+            <GradientStop Color="DarkGray" Offset="1"/>
+        </LinearGradientBrush>
+            <GradientStopCollection x:Key="MyGlassGradientStopsResourse">
+                <GradientStop Color="WhiteSmoke" Offset="0.2"/>
+                <GradientStop Color="Transparent" Offset="0.4"/>
+                <GradientStop Color="WhiteSmoke" Offset="0.5"/>
+                <GradientStop Color="Transparent" Offset="0.75"/>
+                <GradientStop Color="WhiteSmoke" Offset="0.9"/>
+                <GradientStop Color="Transparent" Offset="1"/>
+            </GradientStopCollection>
+            <LinearGradientBrush x:Key="MyGlassBrushResource" StartPoint="0,0" EndPoint="1,1" Opacity="0.75"
+                                 GradientStops="{StaticResource MyGlassGradientStopsResourse}"/>
+            <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource GrayBlueGradientBrush}"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="False">
+                                <Ellipse x:Name="EllipseButton" Stroke="Transparent" Fill="{TemplateBinding Background}"/>
+                                <Label x:Name="ButtonsContent" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Ellipse x:Name="glassCircle"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" StrokeThickness="2"
+                                         Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Opacity="0"
+                                         Fill="{StaticResource MyGlassBrushResource}" RenderTransformOrigin="0.5,0.5">
+                                    <Ellipse.Stroke>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <LinearGradientBrush.GradientStops>
+                                                <GradientStop Offset="0.0" Color="LightBlue"/>
+                                                <GradientStop Offset="1.0" Color="Gray"/>
+                                            </LinearGradientBrush.GradientStops>
+                                        </LinearGradientBrush>                                        
+                                    </Ellipse.Stroke>
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <RotateTransform/>
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                    <Ellipse.BitmapEffect>
+                                        <BevelBitmapEffect/>
+                                    </Ellipse.BitmapEffect>
+                                </Ellipse>
+                                
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Ellipse.Stroke" TargetName="EllipseButton" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                    <Setter Property="Ellipse.Opacity" Value="1" TargetName="glassCircle"/>
+                                    <Setter Property="ContentPresenter.BitmapEffect" TargetName="ButtonsContent">
+                                        <Setter.Value>
+                                            <BlurBitmapEffect Radius="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+        </Style>    
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/PresentationFramework.Aero;component/themes/Aero.NormalColor.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
