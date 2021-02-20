@@ -62,7 +62,7 @@ namespace VPLab1
                     if (System.IO.Path.GetExtension(openFile1.FileName).ToLower() == ".txt")
                         doc.Load(fs, DataFormats.Text);
                     else
-                        MessageBox.Show("Файл какая-то фигня!"); //переделать сообщение
+                        MessageBox.Show("Не получается открыть файл!"); //переделать сообщение
                 }
             }
         }
@@ -79,11 +79,13 @@ namespace VPLab1
 
             if (saveFile1.ShowDialog() == true)
             {
-                TextRange doc = new TextRange(BigText.Document.ContentStart, BigText.Document.ContentEnd);
-                using (FileStream fs = File.Create(saveFile1.FileName))
+                StreamWriter writer = new StreamWriter(saveFile1.FileName);
+                
+                foreach (var item in RightText.Items)
                 {
-                    doc.Save(fs, DataFormats.Text);
+                    writer.WriteLine(item.ToString());
                 }
+                writer.Close();
             }
         }
 
